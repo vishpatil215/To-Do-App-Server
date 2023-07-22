@@ -15,36 +15,7 @@ app.post('/todo',function(req,res){
     const todoContent = req.body;
     readALLTodos(todoContent,writeTodo,res);
     
-//     fs.readFile('./treasure.txt',"utf-8",(err,data)=>{
-//         if(err){
-//             console.log(err);
-//             return ;
-//         }
-//         if(data.length==0){
-//             data = "[]";
-//         }
-//         try{
-//             data = JSON.parse(data);
-//             data.push(req.body);
-
-//             fs.writeFile("./treasure.txt",JSON.stringify(data),(err)=>{
-//                 if(err){
-//                     console.log(err);
-//                     return;
-//                 }
-//                 else{
-//                     res.status(200).json("todo saved successfully");
-//                 }
-//             })
-//         }
-//         catch{
-//             res.status(500).json({message:'Internal sever erro'});
-//             return;
-//         }
-        
-        
-//     })
-})
+});
 
 app.get('/about',function(req,res){
     res.sendFile(__dirname+"/about.html");
@@ -69,7 +40,7 @@ app.get('/todo-data',function(req,res){
 app.get('/todo',function(req,res){
     res.sendFile(__dirname+"/todo.html");
 })
-app.get('/public/script.js',function(req,res){
+app.get('/script.js',function(req,res){
    //res.writeHead({'content-Type': 'application/javascript'})
    res.sendFile(__dirname+'/script.js')
     
@@ -142,7 +113,7 @@ app.post('/update-status',function(req,res){
 
 })
 
-app.listen(3000,()=>{
+app.listen(1000,()=>{
     console.log('listening at the port 3000');
 })
 
